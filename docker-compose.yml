@@ -1,0 +1,13 @@
+version: "2"
+services:
+  training:
+    container_name: training
+    image: nobudev/training:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8005:8888"
+      - "10005:22"
+    volumes:
+      - "~/GitHub/training:/home/dev/projects/training"
